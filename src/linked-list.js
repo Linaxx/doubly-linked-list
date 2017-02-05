@@ -31,7 +31,18 @@ class LinkedList {
         return (this._tail || {}).data || null;
     }
 
-  
+    _at(index) {
+        var el = this._head;
+        
+        for(var i = 1; i <= index; i++) {
+            if(!el) {
+                break;
+            }
+            el = el.next;
+        }
+        
+        return el;
+    }
     
     at(index) {
         return (this._at(index) || {}).data || null;
